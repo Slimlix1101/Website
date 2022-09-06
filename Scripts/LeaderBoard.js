@@ -1,3 +1,5 @@
+let formDatasList = []
+
 const form = document.getElementById('inputs')
 const warningDiv = document.getElementById('warning-div')
 const leaderboard = document.getElementById('leaderboard')
@@ -19,49 +21,48 @@ function generateDate() {
 
 function updateLeaderboard(formDatas) {
 
-    warningDiv.innerHTML = "";
-    const leaderboardElement = document.createElement('div')
-    const nameField = document.createElement('div')
-    const countryField = document.createElement('div')
-    const scoreField = document.createElement('div')
+    formDatasList.sort((a, b) => b[3]-a[3])
 
-    const nameSpan = document.createElement('span')
-    const timeSpan = document.createElement('span')
+    leaderboard.innerHTML = ""
+    formDatasList.forEach((formDatas) => {
+        warningDiv.innerHTML = "";
+        const leaderboardElement = document.createElement('div')
+        const nameField = document.createElement('div')
+        const countryField = document.createElement('div')
+        const scoreField = document.createElement('div')
 
-    nameSpan.innerHTML = formDatas[0] + " " + formDatas[1]
-    timeSpan.innerHTML = generateDate()
-    nameField.appendChild(nameSpan)
-    nameField.appendChild(timeSpan)
+        const nameSpan = document.createElement('span')
+        const timeSpan = document.createElement('span')
 
-    countryField.innerHTML = formDatas[2]
-    scoreField.innerHTML = formDatas[3]
+        nameSpan.innerHTML = formDatas[0] + " " + formDatas[1]
+        timeSpan.innerHTML = generateDate()
+        nameField.appendChild(nameSpan)
+        nameField.appendChild(timeSpan)
 
-    leaderboardElement.appendChild(nameField)
-    leaderboardElement.appendChild(countryField)
-    leaderboardElement.appendChild(scoreField)
+        countryField.innerHTML = formDatas[2]
+        scoreField.innerHTML = formDatas[3]
 
-    leaderboardElement.className = 'leaderboard-element'
-    leaderboard.appendChild(leaderboardElement)
+        leaderboardElement.appendChild(nameField)
+        leaderboardElement.appendChild(countryField)
+        leaderboardElement.appendChild(scoreField)
+
+        leaderboardElement.className = 'leaderboard-element'
+        leaderboard.appendChild(leaderboardElement)
+    })
+    
 
 }
 
 function getFormData(e) {
-
-    
-
     if (e.preventDefault) e.preventDefault();
     const formDatas = [...e.target].map((inputField) => { return inputField.value })
     formDatas.pop() // remove button empty input
 
     if (formDatas.every((data) => data.length != 0)) {
         e.target.reset() // reset form
-        updateLeaderboard(formDatas)
+        formDatasList.push(formDatas)
+        updateLeaderboard()
     } else showWarning() // check if all field is valid
-
-    
-    
-    
-
 }
 
 if (form.attachEvent) {

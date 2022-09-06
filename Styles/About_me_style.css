@@ -1,0 +1,85 @@
+.headings {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;  
+}
+
+
+.avatar {
+    width: auto;
+    height: auto;
+    max-height: 150px;
+    max-width: 150px;
+    object-fit: fill; 
+    border: 4px dashed;
+    border-radius: 75px;
+    margin: 20px -50px 0px 100px;
+}
+
+.display-board {
+    margin: 0px 80px 0px 80px;
+    padding-left: 10px;
+    background-color: rgb(255, 143, 143);
+    border-radius: 5px;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.display-board > #text {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    animation: slide-in;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+#nameTitle {
+    letter-spacing: 12px;
+    text-decoration: underline;
+    font-size: 50px;
+    transform: scale(1,0.95);
+    margin: 50px 50px 0px 100px;
+    width: 400px;
+}
+
+.list {
+    display: flex;
+    justify-content:left;
+    gap: 10px;
+    padding: 0px 10% 0px 10%;
+}
+
+.list > div {
+    padding: 10px;
+}
+
+.list li {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+a:link{color:inherit}
+a:active{color:inherit}
+a:visited{color:inherit}
+a:hover{color:inherit}
+
+img { /*for flex mode*/
+    align-items: center; 
+    justify-content: center; 
+    max-width:97%;
+    max-height: 97%;
+}
+
+p {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    margin: 20px 100px 20px 100px
+}
+
+div > h2 {
+    padding-left: 6.5%
+}
+
+@keyframes slide-in {
+    0% {opacity: 0; transform: translate(-30px, 0);}
+    100% {opacity: 1; transform: translate(0px, 0);}
+}

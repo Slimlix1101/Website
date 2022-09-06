@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../Styles/Coding_style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    </head>
+    <body>
+        <div>
+            <h1 style="padding-left: 20px" class="headings">Coding</h1> 
+            <div style="display:flex; align-items: center; padding-left: 90%; height: 30px;">
+                <a href="../Home.html">
+                    <span class="material-icons-outlined" style="margin: 0px 10px 0px 10px">
+                        home
+                    </span>
+                </a>
+                <h4 class="headings">Home</h4>
+            </div>
+            <div class="project-block" id="countries-chart-div">
+                <h1 class="headings" style="padding-left: 20px">
+                    World Data Visualization (with Charts.js)</h1>
+                <canvas id="population-chart" style="margin: 30px"></canvas>
+                <script src="../Scripts/ChartDisplayer.js"></script>
+                <br>
+            </div>
+            <div class="project-block" id="player-leaderboard">
+                <h1 class="headings" style="text-align: center">Leaderboard</h1>
+
+                <form class="inputs" id="inputs">
+                    <input type="text" placeholder="First Name">
+                    <input type="text" placeholder="Last Name">
+                    <input type="text" placeholder="Country">
+                    <input type="number" placeholder="Player Score">
+                    <button type="submit">Add player</button>
+                </form>
+
+                <div class="headings" id='warning-div' style="font-size: 20px; text-align: center; margin-bottom: 20px;"></div>
+                <div class="leaderboard" id="leaderboard">
+                    
+                </div>
+                <script src="../Scripts/LeaderBoard.js"></script>
+                
+                
+            </div>
+            
+        </div>
+    </body>
+</html>
+    

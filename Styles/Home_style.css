@@ -1,0 +1,53 @@
+#website_title {
+    font-family: 'Ubuntu', sans-serif;
+    text-align: left;
+    padding-left: 4%;
+}
+#navigation_bar {
+    list-style-type: none;
+    margin: 25px;
+    overflow: hidden;
+    background-color: rgb(242, 242, 242);
+    box-shadow: 5px 5px 1px gray;
+    border-radius: 10px;
+    position: sticky;
+}
+
+
+
+li a { /*All links in list items*/
+    float: right;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    color: black;
+    padding: 8px 15px;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    position: relative;
+    text-decoration: none;
+    border-right: 2px solid black;
+    
+    
+    min-height: 30px;
+    min-width: 20px;
+}
+
+li a:hover {
+    animation: onBarSelection;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    
+}
+
+@keyframes onBarSelection {
+    from {
+        background-color: white;
+        font-weight: normal;
+    }
+    to {
+        background-color: rgb(159, 159, 159);
+        font-weight: bold;
+    }
+}
+
